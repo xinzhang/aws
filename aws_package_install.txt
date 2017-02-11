@@ -1,0 +1,15 @@
+13.55.247.205
+
+curl --location https://rpm.nodesource.com/setup_6.x | sudo bash - 
+
+sudo yum install -y nodejs
+
+scp -r -i xz.ssh .\pizza_luvrs ec2-user@13.55.247.205:/home/ec2-user/pizza-luvrs
+
+--------------------
+Launch configuration user data:
+#!/bin/bash
+echo "starting pizza-luvrs"
+cd /home/ec2-user/pizza-luvrs
+npm start
+--------------
